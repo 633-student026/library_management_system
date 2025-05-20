@@ -34,5 +34,5 @@ BorrowingDAO.java
 ReturnDAO.java  
 
  ## 実装状況
- ログイン機能
+ ログイン機能　　
  本の貸出・返却
