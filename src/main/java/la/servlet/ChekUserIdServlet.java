@@ -33,7 +33,7 @@ public class ChekUserIdServlet extends HttpServlet {
 		int id = 0;
 
 		// パラメータチェック
-		// 各変数が値が格納されているか
+		// 各変数に値が格納されているか
 		System.out.println(name + pass + address + stAddressNum + stDate + stTel + email);
 		if (name == null || name.length() == 0 || pass == null
 				|| pass.length() == 0 || address == null
@@ -64,7 +64,6 @@ public class ChekUserIdServlet extends HttpServlet {
 		}
 
 		// 表示データをJavaBeansにする
-		//計算結果をPersonBean型で保存
 		AccountBean account = new AccountBean(name, addressNum, address, tel, email, stDate, pass, id);
 
 		//データベース登録
@@ -81,7 +80,6 @@ public class ChekUserIdServlet extends HttpServlet {
 		}
 
 		// JavaBeansをリクエストスコープに入れてJSPへフォーワードする
-		// リクエストスコープに作成したPersonBean型のインスタンスをセット
 		request.setAttribute("account", account);
 		// フォワードのためのインスタンスを作成
 		RequestDispatcher rd = request.getRequestDispatcher("/checkAccount.jsp");
