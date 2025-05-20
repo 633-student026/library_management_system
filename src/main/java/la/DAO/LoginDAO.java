@@ -45,9 +45,7 @@ public class LoginDAO {
 				String name = rs.getString("name");
 				list.add(user_id);
 				list.add(pass);
-				list.add(name);
-				// 商品一覧をListとして返す
-				//System.out.println(list.get(0) + list.get(1));
+				
 				return list;
 			} else {
 				return null;

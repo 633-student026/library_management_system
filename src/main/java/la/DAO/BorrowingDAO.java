@@ -24,12 +24,10 @@ public class BorrowingDAO {
 	public int BorrowingBook(int userId, int bookId) throws DAOException {
 		// SQL文の作成
 		String sql = "insert into borrowing (bookID, id, checkout_date, loan_period) values (?, ?, current_date, now() + cast('1 months' as INTERVAL));";
-
 		try (// データベースへの接続
 				Connection con = DriverManager.getConnection(url, user, pass);
 				// PreparedStatementオブジェクトの取得
 				PreparedStatement st = con.prepareStatement(sql);) {
-			// 商品名と値段の指定
 			st.setInt(1, bookId);
 			st.setInt(2, userId);
 			// SQLの実行
@@ -40,7 +38,6 @@ public class BorrowingDAO {
 			try (Connection con2 = DriverManager.getConnection(url, user, pass);
 					// PreparedStatementオブジェクトの取得
 					PreparedStatement st2 = con2.prepareStatement(sql);) {
-				// 商品名と値段の指定
 				st2.setInt(1, bookId);
 				// SQLの実行
 				return rows;

@@ -43,7 +43,6 @@ public class NewLoginDAO {
 				Connection con = DriverManager.getConnection(url, user, pass);
 				// PreparedStatementオブジェクトの取得
 				PreparedStatement st = con.prepareStatement(sql);) {
-			// 商品名と値段の指定
 			st.setString(1, bean.getName());
 			st.setString(2, bean.getAddress());
 			st.setInt(3, bean.getAddressNum());
@@ -76,9 +75,6 @@ public class NewLoginDAO {
 			// 結果の取得
 
 			if (rs.next()) {
-
-				// 商品一覧をListとして返す
-				//System.out.println(list.get(0) + list.get(1));
 				return rs.getString("id");
 			} else {
 				return null;

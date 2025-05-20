@@ -22,8 +22,8 @@ public class CheckLoginServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		// リクエストパラメータ取得
 		// リクエスト内のユーザ入力をUTF-8に変換
-
 		request.setCharacterEncoding("UTF-8");
+
 		// ユーザ入力をリクエストから取り出す
 		String id = request.getParameter("id");
 		String pass = request.getParameter("pass");
@@ -39,7 +39,6 @@ public class CheckLoginServlet extends HttpServlet {
 			rd.forward(request, response);
 			return;
 		}
-
 		try {
 			LoginDAO dao = new LoginDAO();
 			List<String> result = dao.findAll(Integer.parseInt(id));
@@ -73,7 +72,6 @@ public class CheckLoginServlet extends HttpServlet {
 				rd.forward(request, response);
 				return;
 			} else {
-
 				//リクエストスコープにエラー文をmessageという名前でセット
 				request.setAttribute("message", "IDまたはパスワードが間違っています");
 				// エラー表示画面へのフォワードのためにインスタンスを作成

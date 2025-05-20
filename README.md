@@ -3,10 +3,10 @@
  top.jsp
  newLogin.jsp
 ## java/
-### servlet/
+servlet/  
  ChekUserId.java
  ChackLogin.java
-### DAO/
+DAO/  
 NewLoginDAO.java
 LoginDAO.java
 
@@ -15,9 +15,9 @@ LoginDAO.java
  borrowing.jsp
  afterBorrowing.jsp
 ## java/
-### servlet/
+  servlet/  
  Borrowing.java
-### DAO/
+  DAO/  
 BorrowingDAO.java
 
 
