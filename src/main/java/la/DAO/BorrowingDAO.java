@@ -41,7 +41,7 @@ public class BorrowingDAO {
 				System.out.println(is_borrowing_availability);
 
 			} else {
-				return -1;
+				return -2;
 			}
 
 			if (!is_borrowing_availability) {
@@ -56,7 +56,7 @@ public class BorrowingDAO {
 	}
 
 	public int BorrowingBook(int userId, int bookId) throws DAOException {
-		if (checkBook(bookId) == -1) {
+		if (checkBook(bookId) <= -1) {
 			return -1;
 		}
 		// SQL文の作成

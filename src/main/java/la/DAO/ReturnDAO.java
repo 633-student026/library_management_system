@@ -24,7 +24,7 @@ public class ReturnDAO extends BorrowingDAO {
 	public int ReturnBook(int userId, int bookId) throws DAOException {
 		// SQL文の作成
 		int check = checkBook(bookId);
-		if (check == -1) {
+		if (check != -1) {
 			return -1;
 		}
 		String sql = "update borrowing set return_date = current_date where bookid = ? and id = ?;";
