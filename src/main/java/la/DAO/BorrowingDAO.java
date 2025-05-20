@@ -34,16 +34,13 @@ public class BorrowingDAO {
 				// SQLの実行
 				ResultSet rs = st.executeQuery();) {
 			// 結果の取得
-
 			boolean is_borrowing_availability;
 			if (rs.next()) {
 				is_borrowing_availability = rs.getBoolean("is_borrowing_availability");
 				System.out.println(is_borrowing_availability);
-
 			} else {
 				return -2;
 			}
-
 			if (!is_borrowing_availability) {
 				return -1;
 			} else {
