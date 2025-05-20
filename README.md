@@ -1,23 +1,23 @@
-### login func
+# login func
 ## webapp/
  top.jsp
  newLogin.jsp
-## java/
-# servlet/
+### java/
+### servlet/
  ChekUserId.java
  ChackLogin.java
-# DAO/
+### DAO/
 NewLoginDAO.java
 LoginDAO.java
 
-### Borrowing func
+# Borrowing func
 ## webapp/
  borrowing.jsp
  afterBorrowing.jsp
 ## java/
-# servlet/
+### servlet/
  Borrowing.java
-# DAO/
+### DAO/
 BorrowingDAO.java
 
 
