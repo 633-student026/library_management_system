@@ -19,6 +19,12 @@
  <input type="text" name="bookID"><button>貸出</button>
  </form>
  <br>
+ 
+ <p>返す本のIDを入力してください</p>
+ <form action="ReturnServlet" method="get">
+ <input type="text" name="bookID"><button>返却</button>
+ </form>
+ <br>
   <button type="button" onclick="history.back()">戻る</button>
  
 </center>

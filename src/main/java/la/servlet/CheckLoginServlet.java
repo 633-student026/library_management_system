@@ -86,6 +86,8 @@ public class CheckLoginServlet extends HttpServlet {
 			request.setAttribute("message", "予期せぬエラーが発生");
 			// エラー表示画面へのフォワードのためにインスタンスを作成
 			RequestDispatcher rd = request.getRequestDispatcher("/errInput.jsp");
+			rd.forward(request, response);
+			return;
 		}
 
 	}

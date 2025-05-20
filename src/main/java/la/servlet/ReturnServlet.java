@@ -10,12 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import la.DAO.BorrowingDAO;
 import la.DAO.DAOException;
+import la.DAO.ReturnDAO;
 import la.bean.AccountBean;
 
-@WebServlet("/BorrowingServlet")
-public class BorrowingServlet extends HttpServlet {
+@WebServlet("/ReturnServlet")
+public class ReturnServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
@@ -52,25 +52,25 @@ public class BorrowingServlet extends HttpServlet {
 		}
 
 		try {
-			BorrowingDAO dao = new BorrowingDAO();
-			int result = dao.BorrowingBook(sessionBean.getId(), Integer.parseInt(bookId));
-			System.out.println(result + "件追加");
-			if (result != -1) { //貸し出せない本の場合-1が返ってくる
+			ReturnDAO dao = new ReturnDAO();
+			int result = dao.ReturnBook(sessionBean.getId(), Integer.parseInt(bookId));
+			if (result == -1) {
 				//リクエストスコープにエラー文をmessageという名前でセット
-				request.setAttribute("bookId", bookId);
-				RequestDispatcher rd = request.getRequestDispatcher("/afterBorrowing.jsp");
-				// フォワード
-				rd.forward(request, response);
-				return;
-			} else {
-				//リクエストスコープにエラー文をmessageという名前でセット
-				request.setAttribute("message", "貸出登録できない本です。");
+				request.setAttribute("message", "貸出登録されていない本です");
 				// エラー表示画面へのフォワードのためにインスタンスを作成
 				RequestDispatcher rd = request.getRequestDispatcher("/errInput2.jsp");
 				// フォワード
 				rd.forward(request, response);
 				return;
 			}
+			System.out.println(result + "件追加");
+			//リクエストスコープにエラー文をmessageという名前でセット
+			request.setAttribute("bookId", bookId);
+			// エラー表示画面へのフォワードのためにインスタンスを作成
+			RequestDispatcher rd = request.getRequestDispatcher("/afterReturn.jsp");
+			// フォワード
+			rd.forward(request, response);
+			return;
 
 		} catch (DAOException e) {
 			// TODO 自動生成された catch ブロック

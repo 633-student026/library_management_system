@@ -26,7 +26,7 @@ public class LoginDAO {
 
 	public List<String> findAll(int id) throws DAOException {
 		// SQL文の作成
-		String sql = "SELECT id, pass, name FROM account WHERE id = " + id;
+		String sql = "SELECT id, pass, name FROM account WHERE id = " + id + ";";
 
 		try (// データベースへの接続
 				Connection con = DriverManager.getConnection(url, user, pass);
@@ -45,7 +45,8 @@ public class LoginDAO {
 				String name = rs.getString("name");
 				list.add(user_id);
 				list.add(pass);
-				
+				list.add(name);
+
 				return list;
 			} else {
 				return null;
