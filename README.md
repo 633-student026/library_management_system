@@ -17,10 +17,20 @@ LoginDAO.java
  afterBorrowing.jsp  
 ## java/
   servlet/  
- Borrowing.java  
+ BorrowingServlet.java  
  
   DAO/    
 BorrowingDAO.java  
 
+# Return book func
+## webapp/
+ return.jsp  
+ afterReturn.jsp  
+## java/
+  servlet/  
+ ReturnServlet.java  
+ 
+  DAO/    
+ReturnDAO.java  
 
  
