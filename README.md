@@ -5,7 +5,8 @@
 ## java/
 servlet/  
  ChekUserId.java  
- ChackLogin.java  
+ ChackLogin.java
+ 　　
 DAO/  
 NewLoginDAO.java  
 LoginDAO.java  
@@ -17,6 +18,7 @@ LoginDAO.java
 ## java/
   servlet/  
  Borrowing.java  
+ 　　
   DAO/    
 BorrowingDAO.java  
 
